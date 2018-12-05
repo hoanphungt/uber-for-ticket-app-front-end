@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 export const TicketsList = (props) => {
-    const { tickets, eventId } = props
+    const { tickets } = props
 
     if (tickets === null) return <h1>Loading ...</h1>
     if (tickets.length === 0) return <h4>There is no ticket available at the moment. Please come back later!</h4>
@@ -18,7 +18,7 @@ export const TicketsList = (props) => {
                             <p>Author: {ticket.user.firstName}</p>
                             <p>Price: {ticket.price}</p>
                             <p>Description: {ticket.description}</p>
-                            <p><Link to={`events/${eventId}/tickets/${ticket.id}`}>More Info</Link></p>
+                            <p><Link to={`tickets/${ticket.id}`}>More Info</Link></p>
                         </li>
                     )
                 })}
