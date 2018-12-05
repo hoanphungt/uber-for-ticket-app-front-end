@@ -18,7 +18,7 @@ export const EventsList = (props) => {
                             <i>{event.picture}</i>
                             <p>Description: {event.description}</p>
                             <i>from: {event.start} to: {event.end}</i>
-                            <p><Link to={`events/${event.id}/tickets`}>More information</Link></p>
+                            <p><Link to={`/events/${event.id}/tickets`}>More information</Link></p>
                         </li>
                     )
                 })}

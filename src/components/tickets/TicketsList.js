@@ -9,21 +9,19 @@ export const TicketsList = (props) => {
 
     return (
         <div>
-            <h3>All tickets offered for this event</h3>
+            <h2>Event: {tickets[0].event.name}</h2>
             <ol>
                 {tickets.map(ticket => {
                     return (
                         <li key={ticket.id}>
-                            <h4>Event: {ticket.event.name}</h4>
                             <p>Author: {ticket.user.firstName}</p>
                             <p>Price: {ticket.price}</p>
                             <p>Description: {ticket.description}</p>
-                            <p><Link to={`tickets/${ticket.id}`}>More Info</Link></p>
+                            <p><Link to={`/tickets/${ticket.id}`}>More Info</Link></p>
                         </li>
                     )
                 })}
             </ol>
-
         </div>
     )
 }

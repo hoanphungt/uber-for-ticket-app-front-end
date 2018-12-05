@@ -6,6 +6,7 @@ import EventsListContainer from './components/events/EventsListContainer';
 import LoginFormContainer from './components/logins/LoginFormContainer';
 import Logout from './components/logout/Logout';
 import TicketsListContainer from './components/tickets/TicketsListContainer';
+import TicketDetailsContainer from './components/tickets/TicketDetailsContainer';
 // import Routes from './components/Routes';
 
 class App extends Component {
@@ -17,7 +18,7 @@ class App extends Component {
           {/* <Routes /> */}
           <Route path="/events" exact component={EventsListContainer} />
           <Route path="/events/:id/tickets" exact component={TicketsListContainer} />
-          
+          <Route path="/tickets/:id" exact component={TicketDetailsContainer} />
           <Route path='/login' exact component={LoginFormContainer} />
           <Route path='/logout' exact component={Logout} />
         </div>
