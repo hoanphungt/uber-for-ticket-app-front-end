@@ -23,7 +23,7 @@ export const TicketsList = (props) => {
                     
                     return (
                         <li key={ticket.id}>
-                            <p>Author: {ticket.user.firstName}</p>
+                            <p>Ticket offered by: <strong>{ticket.user.firstName}</strong></p>
                             <p>Price: €{ticket.price}</p>
                             <p>Description: {ticket.description}</p>
                             <div style={{width:'20px', height:'20px', backgroundColor:`${riskColor}`}} />
