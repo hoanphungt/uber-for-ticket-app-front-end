@@ -12,11 +12,21 @@ export const TicketsList = (props) => {
             <h2>Event: {tickets[0].event.name}</h2>
             <ol>
                 {tickets.map(ticket => {
+                    let riskColor
+                    if (ticket.risk <= 30) {
+                        riskColor = 'green'
+                    } else if (ticket.risk > 75) {
+                        riskColor = 'red'
+                    } else {
+                        riskColor = 'yellow'
+                    }
+                    
                     return (
                         <li key={ticket.id}>
                             <p>Author: {ticket.user.firstName}</p>
-                            <p>Price: {ticket.price}</p>
+                            <p>Price: €{ticket.price}</p>
                             <p>Description: {ticket.description}</p>
+                            <div style={{width:'20px', height:'20px', backgroundColor:`${riskColor}`}} />
                             <p><Link to={`/tickets/${ticket.id}`}>More Info</Link></p>
                         </li>
                     )

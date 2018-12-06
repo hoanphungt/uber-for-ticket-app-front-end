@@ -4,6 +4,7 @@ import {baseUrl} from '../constants'
 export const TICKETS_LOADED = 'TICKETS_LOADED'
 export const TICKET_LOADED = 'TICKET_LOADED'
 export const TICKET_CREATED = 'TICKET_CREATED'
+export const TICKET_UPDATED = 'TICKET_UPDATED'
 
 const ticketsLoaded = (tickets) => ({
     type: TICKETS_LOADED,
@@ -17,6 +18,11 @@ const ticketLoaded = (ticket) => ({
 
 const ticketCreated = (ticket) => ({
     type: TICKET_CREATED,
+    payload: ticket
+})
+
+const ticketUpdated = (ticket) => ({
+    type: TICKET_UPDATED,
     payload: ticket
 })
 
@@ -48,5 +54,22 @@ export const createTicket = (data, event_id) => (dispatch, getState) => {
         .then(res => {
             dispatch(ticketCreated(res.body))
         })
-        .catch(console.error) 
-} 
+        .catch(console.error)       
+}
+
+export const updateTicket = (data, ticket_id) => (dispatch, getState) => {
+    const jwt = getState().currentUser.jwt
+    
+    request
+        .put(`${baseUrl}/tickets/${ticket_id}`)
+        .set('Authorization', `Bearer ${jwt}`)
+        .send(data)
+        .then(res => {
+            dispatch(ticketUpdated(res.body))
+        })
+        .catch(error => {
+            if (error.status === 400) {
+                prompt('You cannot edit this ticket as only its author can do it')
+            }
+        }) 
+}

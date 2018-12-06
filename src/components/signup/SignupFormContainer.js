@@ -10,7 +10,6 @@ class SignupFormContainer extends PureComponent {
 	}
 
 	render() {
-        console.log(this.props.signup.success)
 		if (this.props.signup.success) return <Redirect to='/login' />
 
 		return (

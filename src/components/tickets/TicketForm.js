@@ -7,7 +7,7 @@ export const TicketForm = (props) => {
         <div>
             <h2>Create a ticket here</h2>
             <form onSubmit={submit}>
-                Price: <input name='price' onChange={change} value={values.price} />
+                Price: <input type='number' name='price' onChange={change} value={values.price} />
                 Description: <input name='description' onChange={change} value={values.description} />
                 Image: <input name='picture' onChange={change} value={values.picture} />
                 <button type='submit'>Save</button>

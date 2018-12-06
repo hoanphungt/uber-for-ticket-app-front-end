@@ -14,7 +14,6 @@ class TicketFormContainer extends React.Component {
         this.setState({
             [event.target.name]: event.target.value
         })
-
     }
 
     onSubmit = (event) => {

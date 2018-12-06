@@ -7,15 +7,18 @@ export const EventsList = (props) => {
     if (events === null) return <h1>Loading ...</h1>
     if (events.length === 0) return <h4>There is no event available at the moment. Please come back later!</h4>
 
+    //filter through all events to get only events that will happen in the future
+    const newEvents = events.filter(event => new Date(event.end).getTime() > (new Date()).getTime())
+    
     return (
         <div>
             <h1>List of all Events in Amsterdam</h1>
             <ol>
-                {events.map(event => {
+                {newEvents.map(event => {
                     return (
                         <li key={event.id}>
                             <h4>{event.name}</h4>
-                            <img alt='event logo' src={event.picture} width='200' height='200'/>
+                            <img alt='event logo' src={event.picture} width='200' height='100'/>
                             <p>Description: {event.description}</p>
                             <i>from: {event.start} to: {event.end}</i>
                             <p><Link to={`/events/${event.id}/tickets`}>More information</Link></p>

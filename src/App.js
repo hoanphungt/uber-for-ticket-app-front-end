@@ -15,7 +15,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <div>
-          <h1>Uber-for-Ticket App</h1>
+          <h3>Uber-for-Ticket App</h3>
           {/* <Routes /> */}
           <Route path='/events' exact component={EventsListContainer} />
           <Route path='/events/:id/tickets' exact component={TicketsListContainer} />

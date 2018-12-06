@@ -21,8 +21,7 @@ class TicketsListContainer extends React.Component {
                     {!this.props.currentUser && 
                         <p>Please <Link to="/login">login</Link> or <Link to="/signup">sign up</Link> to add tickets</p>
                     }
-                </div> 
-                
+                </div>                 
                 <button onClick={() => this.props.history.push('/logout')}>Logout</button>
             </div>
         )
