@@ -7,9 +7,6 @@ export const LOGIN_FAILED = 'LOGIN_FAILED'
 
 export const LOGOUT = 'LOGOUT'
 
-export const SIGNUP = 'SIGNUP'
-export const SIGNUP_FAILED = 'SIGNUP_FAILED'
-
 export const ADD_USER = 'ADD_USER'
 export const UPDATE_USER = 'UPDATE_USER'
 export const UPDATE_USERS = 'UPDATE_USERS'

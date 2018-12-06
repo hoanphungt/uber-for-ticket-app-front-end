@@ -7,8 +7,7 @@ class TicketFormContainer extends React.Component {
     state = {
         price: '',
         description: '',
-        picture: '',
-        fraudPercentage: ''
+        picture: ''
     }
 
     onChange = (event) => {
@@ -24,8 +23,7 @@ class TicketFormContainer extends React.Component {
         this.setState({
             price: '',
             description: '',
-            picture: '',
-            fraudPercentage: ''
+            picture: ''
         })
     }
     render() {

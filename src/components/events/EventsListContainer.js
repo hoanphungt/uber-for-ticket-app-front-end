@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { loadEvents } from '../../actions/events'
 import { EventsList } from './EventsList';
 import EventFormContainer from './EventFormContainer';
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 class EventsListContainer extends React.Component {
     componentDidMount() {
@@ -14,7 +14,12 @@ class EventsListContainer extends React.Component {
         return (
             <div>
                 <EventsList events={this.props.events}/>
-                <EventFormContainer />
+                <div>
+                    {this.props.currentUser && <EventFormContainer />}
+                    {!this.props.currentUser && 
+                        <p>Please <Link to="/login">login</Link> or <Link to="/signup">sign up</Link> to add events</p>
+                    }
+                </div>                
                 <button onClick={() => this.props.history.push('/logout')}>Logout</button>
             </div>
         )
@@ -22,7 +27,8 @@ class EventsListContainer extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-    events: state.events
+    events: state.events,
+    currentUser: state.currentUser
 })
 
 export default connect(mapStateToProps, {loadEvents})(EventsListContainer) 

@@ -15,7 +15,7 @@ export const EventsList = (props) => {
                     return (
                         <li key={event.id}>
                             <h4>{event.name}</h4>
-                            <i>{event.picture}</i>
+                            <img alt='event logo' src={event.picture} width='200' height='200'/>
                             <p>Description: {event.description}</p>
                             <i>from: {event.start} to: {event.end}</i>
                             <p><Link to={`/events/${event.id}/tickets`}>More information</Link></p>

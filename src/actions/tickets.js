@@ -20,9 +20,7 @@ const ticketCreated = (ticket) => ({
     payload: ticket
 })
 
-export const loadTickets = (event_id) => (dispatch, getState) => {
-    if (getState().tickets) return
-
+export const loadTickets = (event_id) => (dispatch) => {
     request
         .get(`${baseUrl}/events/${event_id}/tickets`)
         .then(response => {
