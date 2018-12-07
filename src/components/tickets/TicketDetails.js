@@ -24,7 +24,7 @@ export const TicketDetails = (props) => {
             <h1>EUR {ticket.price}</h1>
             <img alt='ticket' src={ticket.picture} width='250' height='100' />
             <p>Description: {ticket.description}</p>
-            <button onClick={edit}>Edit the Ticket</button>
+            <button className='edit' onClick={edit}>Edit the Ticket</button>
             <p><Link to={`/events/${ticket.event.id}/tickets`}>Back to the ticket list</Link></p>
         </div>
     )

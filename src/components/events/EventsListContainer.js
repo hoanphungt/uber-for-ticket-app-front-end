@@ -4,6 +4,7 @@ import { loadEvents } from '../../actions/events'
 import { EventsList } from './EventsList';
 import EventFormContainer from './EventFormContainer';
 import { Link } from 'react-router-dom'
+import './Event.css'
 
 class EventsListContainer extends React.Component {
     componentDidMount() {

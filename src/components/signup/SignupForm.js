@@ -19,12 +19,12 @@ export default class SignupForm extends PureComponent {
     render() {
         return (            
             <div>
-                <form onSubmit={this.handleSubmit}>
-                    <label>Email<input type="email" name="email" value={this.state.email || ''} onChange={this.handleChange} /></label>
-                    <label>First name<input type="text" name="firstName" value={this.state.firstName || ''} onChange={this.handleChange} /></label>
-                    <label>Last name<input type="text" name="lastName" value={this.state.lastName || ''} onChange={this.handleChange} /></label>
-                    <label>Password<input type="password" name="password" value={this.state.password || ''} onChange={this.handleChange} /></label>
-                    <label>Confirm password<input type="password" name="confirmPassword" value={this.state.confirmPassword || ''} onChange={this.handleChange} /></label>
+                <form onSubmit={this.handleSubmit}>                    
+                    <label>First name:<input type="text" name="firstName" value={this.state.firstName || ''} onChange={this.handleChange} /></label>
+                    <label>Last name:<input type="text" name="lastName" value={this.state.lastName || ''} onChange={this.handleChange} /></label><br />
+                    <label>Email:<input type="email" name="email" value={this.state.email || ''} onChange={this.handleChange} /></label><br />
+                    <label>Password:<input type="password" name="password" value={this.state.password || ''} onChange={this.handleChange} /></label><br />
+                    <label>Confirm password:<input type="password" name="confirmPassword" value={this.state.confirmPassword || ''} onChange={this.handleChange} /></label><br />
                     {
                         this.state.password &&
                         this.state.confirmPassword &&

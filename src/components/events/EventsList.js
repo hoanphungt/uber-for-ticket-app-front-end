@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import './Event.css'
 
 export const EventsList = (props) => {
     const { events } = props
@@ -13,12 +14,12 @@ export const EventsList = (props) => {
     return (
         <div>
             <h1>List of all Events in Amsterdam</h1>
-            <ol>
+            <ol className='eventList'>
                 {newEvents.map(event => {
                     return (
                         <li key={event.id}>
                             <h4>{event.name}</h4>
-                            <img alt='event logo' src={event.picture} width='200' height='100'/>
+                            <img alt='event logo' src={event.picture} width='300' height='150'/>
                             <p>Description: {event.description}</p>
                             <i>from: {event.start} to: {event.end}</i>
                             <p><Link to={`/events/${event.id}/tickets`}>More information</Link></p>

@@ -4,6 +4,7 @@ import { loadTickets } from '../../actions/tickets'
 import { TicketsList } from './TicketsList';
 import TicketFormContainer from './TicketFormContainer';
 import { Link } from 'react-router-dom'
+import './Ticket.css'
 
 class TicketsListContainer extends React.Component {
     componentDidMount() {
@@ -15,7 +16,7 @@ class TicketsListContainer extends React.Component {
         return (
             <div>
                 <TicketsList tickets={this.props.tickets} />
-                <button onClick={() => this.props.history.push('/events')}>Go back to the event list</button>
+                <button className='back' onClick={() => this.props.history.push('/events')}>Go back to the event list</button>
                 <div>
                     {this.props.currentUser && <TicketFormContainer eventId={this.props.match.params.id}/>}
                     {!this.props.currentUser && 
