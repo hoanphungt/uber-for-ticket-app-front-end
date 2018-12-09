@@ -35,9 +35,6 @@ select:hover {
 }
 
 /* .ticketList {
-    border: skyblue, 1px, solid;
-    text-align: left;
-    width: 700px;
-    margin: 20px auto;
-    padding: 10px;
+    display: flex;
+    flex-direction: column;
 } */

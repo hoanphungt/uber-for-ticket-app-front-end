@@ -24,6 +24,7 @@ export const TicketsList = (props) => {
                     return (
                         <li className='ticketList' key={ticket.id}>
                             <p>Ticket offered by: <strong>{ticket.user.firstName}</strong></p>
+                            <img alt='ticket' src={ticket.picture} width='200' height='60' />
                             <p>Price: €{ticket.price}</p>
                             <p>Description: {ticket.description}</p>
                             <div style={{width:'100px', height:'10px', backgroundColor:`${riskColor}`}} />

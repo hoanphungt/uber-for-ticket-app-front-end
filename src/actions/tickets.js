@@ -1,5 +1,5 @@
 import request from 'superagent'
-import {baseUrl} from '../constants'
+import { baseUrl } from '../constants'
 
 export const TICKETS_LOADED = 'TICKETS_LOADED'
 export const TICKET_LOADED = 'TICKET_LOADED'
@@ -54,22 +54,28 @@ export const createTicket = (data, event_id) => (dispatch, getState) => {
         .then(res => {
             dispatch(ticketCreated(res.body))
         })
-        .catch(console.error)       
+        .catch(console.error)
 }
 
 export const updateTicket = (data, ticket_id) => (dispatch, getState) => {
-    const jwt = getState().currentUser.jwt
-    
-    request
-        .put(`${baseUrl}/tickets/${ticket_id}`)
-        .set('Authorization', `Bearer ${jwt}`)
-        .send(data)
-        .then(res => {
-            dispatch(ticketUpdated(res.body))
-        })
-        .catch(error => {
-            if (error.status === 400) {
-                prompt('You cannot edit this ticket as only its author can do it')
-            }
-        }) 
+    const currentUser = getState().currentUser
+
+    if (currentUser === null) {
+        alert('you cannot edit the ticket')
+    } else {
+        const jwt = currentUser.jwt
+
+        request
+            .put(`${baseUrl}/tickets/${ticket_id}`)
+            .set('Authorization', `Bearer ${jwt}`)
+            .send(data)
+            .then(res => {
+                dispatch(ticketUpdated(res.body))
+            })
+            .catch(error => {
+                if (error.status === 400) {
+                    alert('You cannot edit this ticket! Only the ticket holder can do it')
+                }
+            })
+    }
 }

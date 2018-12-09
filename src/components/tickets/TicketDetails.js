@@ -19,8 +19,8 @@ export const TicketDetails = (props) => {
         <div>
             <h2>Event: {ticket.event.name}</h2>
             <h1>Ticket from: {ticket.user.firstName} {ticket.user.lastName}</h1>
-            <h3 style={{ color: `${riskColor}` }}>Risk: {Math.floor(ticket.risk)}%</h3>
-            <i>We calculated that the risk of this ticket being a fraud is {Math.floor(ticket.risk)}%</i>
+            <h3 style={{ color: `${riskColor}` }}>Risk: {Math.round(ticket.risk)}%</h3>
+            <i>We calculated that the risk of this ticket being a fraud is {Math.round(ticket.risk)}%</i>
             <h1>EUR {ticket.price}</h1>
             <img alt='ticket' src={ticket.picture} width='250' height='100' />
             <p>Description: {ticket.description}</p>
