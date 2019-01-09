@@ -11,9 +11,4 @@ const enhancer = composeEnhancers(
 
 const store = createStore(reducer, enhancer)
 
-// const initialCurrentUser = store.getState().currentUser
-// if (initialCurrentUser) {
-//   socket.connect(store.dispatch, initialCurrentUser.jwt)
-// }
-
 export default store
