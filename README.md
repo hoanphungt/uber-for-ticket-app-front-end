@@ -1,6 +1,9 @@
 # uber-for-ticket-app-back-end
+Client for the ticket swapping app.
+
 [The Web App](https://uber-for-ticket.netlify.com/events)
-Client for the ticket swapping app. This app is built using the following stacks:
+
+ This app is built using the following stacks:
 
 * JavaScript
 * React
